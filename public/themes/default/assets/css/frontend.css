@@ -8272,6 +8272,8 @@ a.navbar-brand {
     margin-top: 20px; }
   .list.transit-list .list-item:nth-child(even) {
     background: #f4f4f4; }
+  .list.transit-list .list-item:nth-child(odd) {
+    background: #ccc; }
 
 .map-canvas {
   min-height: 95vh;

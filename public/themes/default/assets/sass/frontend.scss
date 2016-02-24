@@ -101,7 +101,9 @@ a.navbar-brand{
     .list-item:nth-child(even){
       background:#f4f4f4;
     }
-
+    .list-item:nth-child(odd){
+      background:#ccc;
+    }
   }
 }
 
