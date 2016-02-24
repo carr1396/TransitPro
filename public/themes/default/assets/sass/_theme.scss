@@ -1,0 +1,50 @@
+$border-radius-base:  0px;
+$border-radius-large: 0px;
+$border-radius-small: 0px;
+
+$padding-base-vertical:     12px ;
+$padding-base-horizontal:   18px ;
+
+//colors
+$gray-light: #ccc;
+
+
+
+$brand-primary:#0b6c95;
+$brand-danger: #F22613;
+
+$state-danger-bg: #F22613;
+$state-danger-text:#96281B;
+
+$state-info-bg:#2980b9;
+$state-info-text:darken($state-info-bg, 10%);
+
+$state-success-bg:#1abc9c;
+$state-success-text:darken($state-success-bg, 10%);
+
+$state-warning-bg:#f39c12;
+$state-warning-text:darken($state-warning-bg, 10%);
+
+
+// navbar
+$navbar-inverse-bg: $brand-primary;
+$navbar-inverse-color: #fff;
+
+$navbar-default-bg: #2c3e50;
+$navbar-default-color: #f9f9f9;
+$navbar-default-link-color: #f2f2f2;
+
+$navbar-default-link-active-bg: #e74c3c;
+$navbar-default-link-hover-bg:$navbar-default-link-active-bg;
+
+// dropdown
+$dropdown-bg: darken($brand-primary, 5%);
+
+// $padding-large-vertical:    10px ;
+// $padding-large-horizontal:  16px ;
+//
+// $padding-small-vertical:    5px ;
+// $padding-small-horizontal:  10px ;
+//
+// $padding-xs-vertical:       1px ;
+// $padding-xs-horizontal:     5px ;

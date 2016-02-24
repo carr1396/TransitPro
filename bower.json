@@ -1,0 +1,37 @@
+{
+  "name": "transitpro",
+  "description": "A Web Application For Transport Service Managament",
+  "main": "",
+  "authors": [
+    "carr1396 <faridah6931@live.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Transitpro",
+    "Transport",
+    "Booking"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "resources/assets/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "~4.5.0",
+    "jquery": "~2.2.0",
+    "moment": "~2.11.1",
+    "lodash": "~4.0.0",
+    "eonasdan-bootstrap-datetimepicker": "~4.17.37",
+    "simplemde": "~1.9.0",
+    "bootstrap-formhelpers": "~2.3.0",
+    "jquery-ui": "^1.11.4",
+    "toastr": "^2.1.2",
+    "Chart.js": "^1.0.2"
+  }
+}

@@ -1,0 +1,150 @@
+@import "theme";
+@import "bootstrap";
+@import "font-awesome";
+@import "datetimepicker";
+@import "toastr";
+
+
+body{
+  font-family: 'Nixie';
+  background: #eee;
+  padding:0;
+  margin: 0;
+  letter-spacing: 1px;
+  position: relative;
+  // padding-top:5px;
+}
+.container{
+  width: 100%;
+  position: relative;
+}
+
+.welcome-banner{
+  margin-left: -15px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: -15px;
+  min-height: 95vh;
+  position: relative;
+  &.jumbotron{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  img{
+    width: 100%;
+    height: auto;
+  }
+  p{
+    font-size: 20px;
+    letter-spacing: 2px;
+
+  }
+  .welcome-banner-film{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 95vh;
+    background: url(../images/new_year_background_transparent.png);
+    z-index: 5;
+  }
+  .welcome-banner-content{
+    padding-left: 20px;
+    padding-right: 20px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+}
+
+a.navbar-brand{
+  padding: 9px 15px;
+  img{
+    height:48px;
+  }
+}
+
+.dropdown:hover  > .dropdown-menu {
+  display: block;
+  width: 100%;
+}
+
+.dropdown-submenu{
+  position: relative;
+  .dropdown-menu{
+    top:-8px;
+    left:100%;
+  }
+  &:hover > .dropdown-menu{
+    display: block;
+  }
+}
+
+.caret {
+
+  &.right{
+    border:$caret-width-base solid transparent;
+    border-left:$caret-width-base solid;
+  }
+}
+
+.navbar{
+  margin-bottom: 0;
+}
+
+.list{
+  &.transit-list{
+    margin-top:10px;
+    .list-item{
+      margin-top:20px;
+    }
+    .list-item:nth-child(even){
+      background:#f4f4f4;
+    }
+
+  }
+}
+
+.map-canvas{
+  min-height: 95vh;
+  width: 100%;
+}
+.floating-panel{
+  position: absolute;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  line-height: 30px;
+  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.floating-panel-locations{
+  top: 10vh;
+  right: 15vh;
+}
+.floating-panel-routes{
+  left: 8vh;
+  bottom: 5vh;
+}
+.form-flex-group{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.contact-driver-form{
+  display: none;
+}
+
+.main-footer{
+  min-height: 25vh;
+  border-top: 1px solid $brand-primary;
+  background:$brand-primary;
+  color: $navbar-inverse-color;
+  padding: 10px;
+  margin-top: 2rem;
+  margin: 0;
+  width: 100%;
+}
