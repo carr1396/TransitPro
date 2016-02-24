@@ -16,7 +16,7 @@ class Vehicle extends Model implements LogsActivityInterface {
 
   protected $presenter = 'TransitPro\Presenters\VehiclePresenter';
   protected $table='vehicles';
-  protected $fillable =['type', 'registration_number', 'capacity', 'image', 'year', 'vehicle_number', 'model', 'make', 'route','number_plate', 'active'];
+  protected $fillable =['type', 'registration_number', 'capacity', 'image', 'year', 'vehicle_number', 'model', 'make', 'route','number_plate', 'active', 'booking_amount', 'booked'];
 
   protected $dates=['updated_at','created_at'];
   public function vehicle_type(){

@@ -37,6 +37,8 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/account', ['as'=>'backend.account.index', 'uses'=>'Backend\AccountController@index']);
   Route::put('/account/{users}', ['as'=>'backend.account.update', 'uses'=>'Backend\AccountController@update']);
   Route::get('/account/settings', ['as'=>'backend.account.settings', 'uses'=>'Backend\AccountController@settings']);
+  Route::get('/account/address', ['as'=>'backend.account.address', 'uses'=>'Backend\AccountController@address']);
+  Route::put('/account/address/{users}/store', ['as'=>'backend.account.address.store', 'uses'=>'Backend\AccountController@addressCreate']);
 
   Route::get('/account/administrator', ['as'=>'admin.index', 'uses'=>'Backend\Admin\AdminController@index']);
   Route::get('/account/administrator/site/views', ['as'=>'admin.site.views', 'uses'=>'Backend\Admin\AdminController@visits']);
@@ -87,5 +89,6 @@ Route::group(['middleware' => ['web']], function () {
 
   Route::resource('backend/images', 'Backend\ImagesController', ['except'=>['show']]);
 
-  Route::controller('/orders', 'Backend\OrdersController');
+  Route::resource('account/orders', 'Backend\OrdersController', ['except'=>['create', 'edit']]);
+  Route::resource('dashboard/admin/orders', 'Backend\Admin\OrdersController', ['except'=>['create']]);
 });

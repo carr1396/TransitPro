@@ -21,6 +21,17 @@ class AccountController extends Controller
     public function settings(){
       return view('backend.account.settings');
     }
+    public function address(){
+      return view('backend.account.address');
+    }
+    public function addressCreate(Requests\UpdateUserAddressInformation $request, $id){
+      $user=User::findOrFail($id);
+
+      $user->fill($request->only('phone','phone2', 'address', 'address2'))->save();
+
+      // var_dump($request->only('phone','phone2', 'address', 'address2'));
+      return redirect(route('backend.account.address'))->with('status', 'User Address Information Has Been Updated');
+    }
     public function update(Requests\UpdateUserAccountRequest $request, $id)
     {
         $user=User::findOrFail($id);

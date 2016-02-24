@@ -84,6 +84,17 @@
           </div>
          </div>
        </div>
+       @if(strpos(strtoupper($vehicle->vehicle_type->name), strtoupper('bus')) == false)
+         <div class="col-md-6">
+           <div class="form-group">
+             {!!  Form::label('booking_amount', 'Book Amount (RM)') !!}
+             <div class="input-group">
+               <span class="input-group-addon">*</span>
+               {!!  Form::number('booking_amount', null, ['class' => 'form-control', 'placeholder'=>'Vehicle Capacity', 'required' =>'Required']) !!}
+            </div>
+           </div>
+         </div>
+       @endif
        <div class="col-md-12">
          <div class="form-group">
            {!!  Form::label('image', 'Image Path (Get One from image manager)') !!}
@@ -99,6 +110,14 @@
            <label for="active">
              {!!  Form::checkbox('active') !!}
              Active (Default False)
+           </label>
+         </div>
+       </div>
+       <div class="col-md-6">
+         <div class="checkbox">
+           <label for="booked">
+             {!!  Form::checkbox('booked') !!}
+             Booked (Default False)
            </label>
          </div>
        </div>

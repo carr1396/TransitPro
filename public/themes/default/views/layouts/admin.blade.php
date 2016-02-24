@@ -75,6 +75,15 @@
           </ul>
         </li>
         <li>
+          <a href="#"><i class="fa fa-users fa-fw"></i> Orders <span class="fa arrow"></span></a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="{{route('dashboard.admin.orders.index')}}">Show All</a>
+            </li>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <li>
           <a href="#"><i class="fa fa-users fa-fw"></i> Drivers <span class="fa arrow"></span></a>
           <ul class="nav nav-second-level">
             <li>

@@ -32,6 +32,7 @@
     "bootstrap-formhelpers": "~2.3.0",
     "jquery-ui": "^1.11.4",
     "toastr": "^2.1.2",
-    "Chart.js": "^1.0.2"
+    "Chart.js": "^1.0.2",
+    "bootstrap-sass": "^3.3.6"
   }
 }

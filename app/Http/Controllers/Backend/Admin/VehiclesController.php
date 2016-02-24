@@ -83,7 +83,7 @@ class VehiclesController extends Controller
     public function edit($id)
     {
         $types=Type::lists('name','id');
-        $vehicle=$this->vehicles->findOrFail($id);
+        $vehicle=$this->vehicles->with('vehicle_type')->findOrFail($id);
         return view('backend.admin.vehicles.form', compact('vehicle', 'types'));
     }
 
@@ -97,15 +97,21 @@ class VehiclesController extends Controller
     public function update(Requests\UpdateVehicleRequest $request, $id)
     {
       $active = $request['active'];
+      $booked=$request['booked'];
       if($active){
         $active=1;
       }else{
         $active=0;
       }
+      if($booked){
+        $booked=1;
+      }else{
+        $booked=0;
+      }
       $vehicle=$this->vehicles->findOrFail($id);
       $vehicle->fill($request->only('type',
       'registration_number', 'capacity', 'image', 'year', 'vehicle_number','color',
-       'model', 'make', 'route','number_plate')+array('active' => $active ))->save();
+       'model', 'make', 'route','number_plate', 'booking_amount')+array('active' => $active, 'booked'=>$booked ))->save();
        return redirect(route('dashboard.admin.vehicles.edit', $vehicle->id))->with('status', 'Vehicle Information Has Been Updated.');
     }
     public function assignRoute(Request $request, $id)

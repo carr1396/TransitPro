@@ -18,7 +18,9 @@ class User extends Authenticatable implements LogsActivityInterface {
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'password','email', 'display_name', 'other_names', 'last_login_at', 'image'
+        'first_name', 'last_name', 'password','email', 'display_name',
+        'other_names', 'last_login_at', 'image', 'address', 'address2',
+        'phone', 'phone2'
     ];
 
     protected $dates =['last_login_at'];

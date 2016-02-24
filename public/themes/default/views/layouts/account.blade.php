@@ -27,8 +27,11 @@
             <li class="{{isActiveRoute('backend.account.settings')}}">
                 <a href="{{route('backend.account.settings')}}"><i class="fa fa-cogs fa-fw"></i>  Settings</a>
             </li>
-            <li class="{{isActiveRoute('backend.images.index')}}">
-                <a href="{{route('backend.images.index')}}"><i class="fa fa-file-image-o fa-fw"></i>Orders</a>
+            <li class="{{isActiveRoute('backend.account.address')}}">
+                <a href="{{route('backend.account.address')}}"><i class="fa fa-location-arrow fa-fw"></i> Address Information</a>
+            </li>
+            <li class="{{isActiveRoute('account.orders.index')}}">
+                <a href="{{route('account.orders.index')}}"><i class="fa fa-shopping-cart fa-fw"></i> Orders</a>
             </li>
             <li class="{{isActiveRoute('backend.images.index')}}">
                 <a href="{{route('backend.images.index')}}"><i class="fa fa-file-image-o fa-fw"></i> Image Manager</a>

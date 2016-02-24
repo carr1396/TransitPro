@@ -25,7 +25,7 @@ class CreateOrdersTable extends Migration
             $table->dateTime('end');
             $table->boolean('booked')->default(1);
             $table->boolean('pending')->default(1);
-            $table->boolean('paid')->default(1);
+            $table->boolean('paid')->default(0);
             $table->integer('amount')->nullable();
             $table->string('address')->nullable();
             $table->string('address2')->nullable();

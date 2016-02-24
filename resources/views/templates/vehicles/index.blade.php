@@ -6,7 +6,11 @@
         <h2>{{$vehicle->present()->displayName()}}</h2>
         <div class="col-sm-2 col-xs-4">
           <a href="{{route('vehicles.show', [lcfirst($vehicle->vehicle_type->name), $vehicle->id,  $vehicle->number_plate])}}" class="thumbnail">
-            <img src="{{theme($vehicle->image?:'images/whitebus.jpg')}}" alt="$vehicle->registration_number">
+            @if($vehicle->image)
+              <img src="{{$vehicle->image}}" alt="{{$vehicle->registration_number}}">
+            @else
+              <img src="{{theme('images/whitebus.jpg')}}" alt="{{$vehicle->registration_number}}">
+            @endif
           </a>
         </div>
         <div class="col-sm-10 col-xs-8">

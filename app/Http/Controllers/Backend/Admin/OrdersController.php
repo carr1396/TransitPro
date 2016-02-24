@@ -1,6 +1,6 @@
 <?php
 
-namespace TransitPro\Http\Controllers\Backend;
+namespace TransitPro\Http\Controllers\Backend\Admin;
 
 use Illuminate\Http\Request;
 
@@ -28,7 +28,7 @@ class OrdersController extends Controller
   public function index()
   {
     $orders=$this->orders->where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->with('user')->with('vehicle')->paginate(10);
-    return view('backend.orders.index', compact('orders'));
+    return view('backend.admin.orders.index', compact('orders'));
   }
 
   /**
@@ -73,8 +73,8 @@ class OrdersController extends Controller
   */
   public function show($id)
   {
-    $order=$this->orders->where('id', $id)->with('user')->with('vehicle')->first();
-    return view('backend.orders.show', compact('order'));
+    $order=$this->orders->all()->with('user')->with('vehicle')->first();
+    return view('backend.admin.orders.show', compact('order'));
   }
 
   /**
@@ -85,7 +85,8 @@ class OrdersController extends Controller
   */
   public function edit($id)
   {
-    //
+    $order=$this->orders->where('id', $id)->with('user')->with('vehicle')->first();
+    return view('backend.admin.orders.form', compact('order'));
   }
 
   /**
@@ -95,9 +96,26 @@ class OrdersController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function update(Requests\CreateOrderRequest $request, $id)
+  public function update(Requests\UpdateOrderRequest $request, $id)
   {
-    //
+    $active = $request['active'];
+    if($active){
+      $active=1;
+    }else{
+      $active=0;
+    }
+    $booked = $request['booked']?1:0;
+    $paid = $request['paid']?1:0;
+
+    $order=$this->orders->findOrFail($id);
+    if ($order) {
+      $order->fill($request->only('start', 'end', 'booked','phone', 'phone2', 'address', 'address2', 'paid', 'active', 'booked'));
+      $order->active=$active;
+      $order->booked=$booked;
+      $order->paid=$paid;
+      $order->save();
+    }
+    return redirect()->back()->with('status', 'You Have Updated A Vehicle Booking.');
   }
 
   /**

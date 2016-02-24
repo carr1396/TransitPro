@@ -39,7 +39,8 @@ class UpdateVehicleRequest extends Request
       'number_plate' => ['required', 'max:255', 'unique:vehicles,number_plate,'.$this->route('vehicles'), 'alpha_dash'],
       'vehicle_number' => ['max:255', 'unique:vehicles,vehicle_number,'.$this->route('vehicles'), 'alpha_num'],
       'type' => 'required',
-      'active' => 'boolean'
+      'active' => 'boolean',
+      'booking_amount'=>'numeric'
     ];
   }
 }
